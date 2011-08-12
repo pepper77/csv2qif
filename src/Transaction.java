@@ -1,11 +1,9 @@
 import java.sql.Date;
 
 /**
- * Created by IntelliJ IDEA.
- * User: pepper
+ * Created Pål Arne Hoff
  * Date: 11.08.11
  * Time: 15:02
- * To change this template use File | Settings | File Templates.
  */
 public class Transaction {
     private Date date;

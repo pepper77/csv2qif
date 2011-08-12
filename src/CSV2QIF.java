@@ -1,21 +1,12 @@
-/**
- * Created by IntelliJ IDEA.
- * User: pepper
- * Date: 11.08.11
- * Time: 15:09
- * To change this template use File | Settings | File Templates.
- */
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by IntelliJ IDEA.
- * User: pepper
+ * Created Pål Arne Hoff
  * Date: 8/10/11
  * Time: 9:44 PM
- * To change this template use File | Settings | File Templates.
  */
 public class CSV2QIF {
     public static void main(String args[]) {
