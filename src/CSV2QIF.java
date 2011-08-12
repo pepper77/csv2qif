@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
  * Time: 9:44 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CSVtoQIF {
+public class CSV2QIF {
     public static void main(String args[]) {
         try {
             InputStream fileInputStream = new FileInputStream(args[0]);
