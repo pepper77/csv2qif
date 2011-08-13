@@ -1,3 +1,5 @@
+import sun.tools.tree.ThisExpression;
+
 import javax.swing.*;
 
 /**
@@ -6,9 +8,20 @@ import javax.swing.*;
  * Time: 16:07
  */
 public class MainGUI {
-    private JButton saveToQIFButton;
     private JTabbedPane tabbedPane1;
-    private JComboBox comboBox1;
-    private JTable table1;
-    private JToolBar toolBar;
+    private JComboBox accountComboBox;
+    private JTable transactionTable;
+    private JButton importCSVButton;
+    private JButton saveToQIFButton;
+
+    public MainGUI() {
+    }
+
+    public JTable getTransactionTable() {
+        return transactionTable;
+    }
+
+    public JTabbedPane getTabbedPane1() {
+        return tabbedPane1;
+    }
 }

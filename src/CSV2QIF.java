@@ -1,3 +1,7 @@
+import sun.tools.javap.Main;
+
+import javax.swing.*;
+import javax.swing.table.TableColumn;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -10,6 +14,19 @@ import java.io.InputStreamReader;
  */
 public class CSV2QIF {
     public static void main(String args[]) {
+        System.out.println("Start");
+        JFrame frame = new JFrame("Test");
+        MainGUI gui = new MainGUI();
+        frame.getContentPane().add(gui.getTabbedPane1());
+        frame.pack();
+        frame.setVisible(true);
+
+        JTable transactionTable = gui.getTransactionTable();
+        transactionTable.addColumn(new TableColumn());
+        System.out.println("Slutt");
+    }
+
+    public void readCSVFile(String args[]) {
         try {
             InputStream fileInputStream = new FileInputStream(args[0]);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream, "ISO8859_15"));
@@ -18,10 +35,9 @@ public class CSV2QIF {
                 if (line == null) break;
                 String[] fields = line.split(",");
                 // process fields here
-                for (int x = 0; x < fields.length; x++) {
-                    System.out.println(fields[x]);
+                for (String s : fields) {
+                    System.out.println(s);
                 }
-
             }
             reader.close();
         } catch (Exception e) {
