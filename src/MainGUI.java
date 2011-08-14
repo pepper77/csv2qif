@@ -1,5 +1,3 @@
-import sun.tools.tree.ThisExpression;
-
 import javax.swing.*;
 
 /**
@@ -8,20 +6,25 @@ import javax.swing.*;
  * Time: 16:07
  */
 public class MainGUI {
-    private JTabbedPane tabbedPane1;
-    private JComboBox accountComboBox;
-    private JTable transactionTable;
-    private JButton importCSVButton;
-    private JButton saveToQIFButton;
+  private JTabbedPane tabbedPane1;
+  private JComboBox accountComboBox;
+  private JTable transactionTable;
+  private JButton importCSVButton;
+  private JButton saveToQIFButton;
+  private JFrame mainWindow;
 
-    public MainGUI() {
-    }
+  public MainGUI() {
+    mainWindow = new JFrame("CVS to QIF");
+    mainWindow.getContentPane().add(tabbedPane1);
+    mainWindow.pack();
+    mainWindow.setVisible(true);
+  }
 
-    public JTable getTransactionTable() {
-        return transactionTable;
-    }
+  public JTable getTransactionTable() {
+    return transactionTable;
+  }
 
-    public JTabbedPane getTabbedPane1() {
-        return tabbedPane1;
-    }
+  public JTabbedPane getTabbedPane1() {
+    return tabbedPane1;
+  }
 }

@@ -6,53 +6,53 @@ import java.sql.Date;
  * Time: 15:02
  */
 public class Transaction {
-    private Date date;
-    private String Payee;
-    private String Category;
-    private float Value;
-    private String Memo;
+  private Date date;
+  private String Payee;
+  private String Category;
+  private float Value;
+  private String Memo;
 
-    public Transaction() {
-    }
+  public Transaction() {
+  }
 
-    public Date getDate() {
+  public Date getDate() {
 
-        return date;
-    }
+    return date;
+  }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+  public void setDate(Date date) {
+    this.date = date;
+  }
 
-    public String getPayee() {
-        return Payee;
-    }
+  public String getPayee() {
+    return Payee;
+  }
 
-    public void setPayee(String payee) {
-        Payee = payee;
-    }
+  public void setPayee(String payee) {
+    Payee = payee;
+  }
 
-    public String getCategory() {
-        return Category;
-    }
+  public String getCategory() {
+    return Category;
+  }
 
-    public void setCategory(String category) {
-        Category = category;
-    }
+  public void setCategory(String category) {
+    Category = category;
+  }
 
-    public float getValue() {
-        return Value;
-    }
+  public float getValue() {
+    return Value;
+  }
 
-    public void setValue(float value) {
-        Value = value;
-    }
+  public void setValue(float value) {
+    Value = value;
+  }
 
-    public String getMemo() {
-        return Memo;
-    }
+  public String getMemo() {
+    return Memo;
+  }
 
-    public void setMemo(String memo) {
-        Memo = memo;
-    }
+  public void setMemo(String memo) {
+    Memo = memo;
+  }
 }
