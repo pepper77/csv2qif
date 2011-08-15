@@ -1,3 +1,5 @@
+package no.ol.hoff.csv2qif.gui;
+
 import javax.swing.*;
 
 /**
