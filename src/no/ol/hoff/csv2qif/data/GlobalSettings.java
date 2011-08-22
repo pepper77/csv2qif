@@ -1,8 +1,7 @@
 package no.ol.hoff.csv2qif.data;
 
 
-import no.stat.vdi.analyzer.Settings;
-import no.stat.vdi.analyzer.gui.CopySavePropertiesEditor;
+import no.ol.hoff.csv2qif.gui.CopySavePropertiesEditor;
 import org.apache.log4j.Logger;
 
 import java.util.prefs.Preferences;

@@ -53,6 +53,10 @@ public class FileLoader extends SwingWorker implements ResultProvider {
   private Exception errorMessage;
   private String resultTextFile;
 
+  @Override
+  protected Object doInBackground() throws Exception {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
 
   /**
    * Creates a new FileLoader-object.
@@ -85,32 +89,9 @@ public class FileLoader extends SwingWorker implements ResultProvider {
       selectedFile = fc.getSelectedFile();
       logger.debug("selectedFile=" + selectedFile);
       // Start loading of file in a new thread.
-      start();
+      //start();
     }
     return selectedFile;
-  }
-
-
-  /**
-   * Adds the incoming {@link java.beans.PropertyChangeListener} from the list of listeners.
-   *
-   * @param listener The {@link java.beans.PropertyChangeListener} to add.
-   */
-  public void addPropertyChangeListener(PropertyChangeListener listener) {
-    logger.debug("Entering addPropertyChangeListener(listener=" + listener + ")");
-    propertySupport.addPropertyChangeListener(listener);
-  }
-
-
-  /**
-   * Removes the incoming {@link java.beans.PropertyChangeListener} from the list
-   * of listeners.
-   *
-   * @param listener The {@link java.beans.PropertyChangeListener} to remove.
-   */
-  public void removePropertyChangeListener(PropertyChangeListener listener) {
-    logger.debug("Entering removePropertyChangeListener(listener=" + listener + ")");
-    propertySupport.removePropertyChangeListener(listener);
   }
 
 

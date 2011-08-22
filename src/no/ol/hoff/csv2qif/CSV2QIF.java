@@ -1,9 +1,12 @@
 package no.ol.hoff.csv2qif;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import no.ol.hoff.csv2qif.gui.MainGUI;
 import org.apache.log4j.Logger;
+import org.codehaus.groovy.tools.groovydoc.Main;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -19,19 +22,29 @@ public class CSV2QIF {
 
   public static void main(String args[]) {
     logger.debug("Entering main(args=" + args.toString() + ")");
+    new CSV2QIF();
+    logger.debug("Slutt");
+  }
+
+  public CSV2QIF() {
+    logger.debug("Entering CSV2QIF()");
     // Start up GUI.
     MainGUI gui = new MainGUI();
     // Read CSV file into table.
     JTable transactionTable = gui.getTransactionTable();
+    DefaultTableModel dtm = readCSVFile("/Users/pepper/IdeaProjects/brukskonto.csv");
+    transactionTable.setModel(dtm);
+    transactionTable.repaint();
+    gui.pack();
 
 //    transactionTable.addColumn(new TableColumn());
-    logger.debug("Slutt");
   }
 
-  public void readCSVFile(String args[]) {
-    logger.debug("Entering readCSVFile(args=" + args.toString() + ")");
+  public DefaultTableModel readCSVFile(String file) {
+    logger.debug("Entering readCSVFile(args=" + file + ")");
+    DefaultTableModel dtm = new DefaultTableModel();
     try {
-      InputStream fileInputStream = new FileInputStream(args[0]);
+      InputStream fileInputStream = new FileInputStream(file);
       BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream, "ISO8859_15"));
       while (true) {
         String line = reader.readLine();
@@ -41,12 +54,14 @@ public class CSV2QIF {
         for (String s : fields) {
           System.out.println(s);
         }
+        dtm.addRow(fields);
       }
       reader.close();
     } catch (Exception e) {
       System.out.println(e.toString());
-    } finally {
     }
+    System.out.println("Return dtm=" + dtm.toString());
+    return dtm;
   }
 }
 
